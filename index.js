@@ -18,6 +18,7 @@ const services = {
 
 const btnContainer = document.querySelector('#btn-container')
 const requestedServices = document.querySelector('#requested-services')
+const totalAmount = document.querySelector("#total-amount")
 
 // display buttons to add/remove a service
 Object.keys(services).forEach(e => {
@@ -28,6 +29,8 @@ Object.keys(services).forEach(e => {
         btn.style.border = (services[e].requested) ? "solid red" : ""
         // call function to update display
         updateRequestedServices()
+        // call function to update total
+        updateTotalAmount()
     })
     btnContainer.appendChild(btn)
 }) 
@@ -39,4 +42,14 @@ function updateRequestedServices() {
             requestedServices.innerHTML += `<p>${services[e].name} \$${services[e].price}</p>`
         }
     }) 
+}
+
+function updateTotalAmount() {
+    let currentTotal = 0
+    Object.keys(services).forEach(e => {
+        if (services[e].requested === true) {
+            currentTotal += services[e].price
+        }
+    })
+    totalAmount.innerHTML = `Total: \$${currentTotal}` 
 }
