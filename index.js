@@ -1,55 +1,66 @@
-const services = {
-    washCar: {
-        name: "Wash Car",
-        price: 10,
-        requested: false
-    },
-    mowLawn: {
-        name: "Mow Lawn",
-        price: 20,
-        requested: false
-    },
-    pullWeeds: {
-        name: "Pull Weeds",
-        price: 30,
-        requested: false
-    }
-}
-
 const btnContainer = document.querySelector('#btn-container')
 const requestedServices = document.querySelector('#requested-services')
 const totalAmount = document.querySelector("#total-amount")
+const resetBtn = document.querySelector("#reset-button")
+
+const services = [
+    {
+        name: "Wash Car",
+        id: "wash-car",
+        price: 10,
+        requested: false
+    },
+    {
+        name: "Mow Lawn",
+        id: "mow-lawn",
+        price: 20,
+        requested: false
+    },
+    {
+        name: "Pull Weeds",
+        id: "pull-weeds",
+        price: 30,
+        requested: false
+    }
+]
 
 // display buttons to add/remove a service
-Object.keys(services).forEach(e => {
+services.forEach((elem, index) => {
     const btn = document.createElement("button")
-    btn.innerText = services[e].name
+    btn.innerText = elem.name
+    btn.id = elem.id
     btn.addEventListener("click", function() {
-        services[e].requested = !services[e].requested
-        btn.style.border = (services[e].requested) ? "solid red" : ""
-        // call function to update display
-        updateRequestedServices()
-        // call function to update total
-        updateTotalAmount()
+        // toggle requested service
+        setRequestedService(services, index, !elem.requested)
     })
     btnContainer.appendChild(btn)
-}) 
+})
+
+function setRequestedService(servicesObj, servicesIndex, requestedValue) {
+    // toggle the requested value for a service
+    servicesObj[servicesIndex].requested = requestedValue
+    // update button border appropriately
+    const serviceBtn = document.getElementById(servicesObj[servicesIndex].id)
+    serviceBtn.style.border = (servicesObj[servicesIndex].requested) ? "solid red" : ""
+    // call function to update display
+    updateRequestedServices()
+}
 
 function updateRequestedServices() {
-    requestedServices.innerHTML = ''
-    Object.keys(services).forEach(e => {
-        if (services[e].requested === true) {
-            requestedServices.innerHTML += `<p>${services[e].name} \$${services[e].price}</p>`
-        }
-    }) 
-}
-
-function updateTotalAmount() {
     let currentTotal = 0
-    Object.keys(services).forEach(e => {
-        if (services[e].requested === true) {
-            currentTotal += services[e].price
+    let currentServices = ''
+    services.forEach(elem => {
+        if (elem.requested === true) {
+            currentServices += `<p>${elem.name} \$${elem.price}</p>`
+            currentTotal += elem.price
         }
     })
-    totalAmount.innerHTML = `Total: \$${currentTotal}` 
+    requestedServices.innerHTML = currentServices
+    totalAmount.innerHTML = `Total: \$${currentTotal}`  
 }
+
+resetBtn.addEventListener("click", function() {
+    services.forEach((elem, index) => {
+        setRequestedService(services, index, false)
+    })
+})
