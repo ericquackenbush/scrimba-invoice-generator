@@ -27,7 +27,7 @@ const services = [
 // display buttons to add/remove a service
 services.forEach((elem, index) => {
     const btn = document.createElement("button")
-    btn.innerText = elem.name
+    btn.innerText = elem.name + ": $" + elem.price
     btn.id = elem.id
     btn.addEventListener("click", function() {
         // toggle requested service
@@ -51,7 +51,7 @@ function updateRequestedServices() {
     let currentServices = ''
     services.forEach(elem => {
         if (elem.requested === true) {
-            currentServices += `<p>${elem.name} \$${elem.price}</p>`
+            currentServices += `<span>${elem.name}</span> <span>\$${elem.price}</span>`
             currentTotal += elem.price
         }
     })

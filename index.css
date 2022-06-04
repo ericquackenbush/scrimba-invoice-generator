@@ -1,4 +1,60 @@
 html, body {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1C1C1C;
+}
+
+.card {
+    width: 550px;
+    height: 719px;
+    background-color: #FFFFFF;
+}
+
+.header {
+    background-color: #F5F5F5;
+    text-align: center;
+    padding-top: 59px;
+    padding-bottom: 51px;
+}
+
+.container {
+    padding-left: 39px;
+    padding-right: 39px;
+}
+
+#btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 22.27px;
+}
+
+#btn-container > button {
+    padding: 9px 13px;
+}
+
+.dual-column {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.dual-column span:nth-child(even) {
+    justify-self: end;
+}
+
+#horizontal-line {
+    height: 0px;
+    border: 1px solid #C3C6DB;
+}
+
+#payment {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#reset-button {
+    width: 100%;
 }
