@@ -1,6 +1,6 @@
 const btnContainer = document.querySelector('#btn-container')
 const requestedServices = document.querySelector('#requested-services')
-const totalAmount = document.querySelector("#total-amount")
+const totalAmount = document.querySelector("#payment-total")
 const resetBtn = document.querySelector("#reset-button")
 
 const services = [
@@ -27,7 +27,7 @@ const services = [
 // display buttons to add/remove a service
 services.forEach((elem, index) => {
     const btn = document.createElement("button")
-    btn.innerText = elem.name
+    btn.innerText = elem.name + ": $" + elem.price
     btn.id = elem.id
     btn.addEventListener("click", function() {
         // toggle requested service
@@ -41,7 +41,7 @@ function setRequestedService(servicesObj, servicesIndex, requestedValue) {
     servicesObj[servicesIndex].requested = requestedValue
     // update button border appropriately
     const serviceBtn = document.getElementById(servicesObj[servicesIndex].id)
-    serviceBtn.style.border = (servicesObj[servicesIndex].requested) ? "solid red" : ""
+    serviceBtn.style.border = (servicesObj[servicesIndex].requested) ? "2px solid #4A4E74" : ""
     // call function to update display
     updateRequestedServices()
 }
@@ -51,12 +51,12 @@ function updateRequestedServices() {
     let currentServices = ''
     services.forEach(elem => {
         if (elem.requested === true) {
-            currentServices += `<p>${elem.name} \$${elem.price}</p>`
+            currentServices += `<div><span>${elem.name}</span></div> <div><span>\$</span><span>${elem.price}</span></div>`
             currentTotal += elem.price
         }
     })
     requestedServices.innerHTML = currentServices
-    totalAmount.innerHTML = `Total: \$${currentTotal}`  
+    totalAmount.innerHTML = `\$${currentTotal}`  
 }
 
 resetBtn.addEventListener("click", function() {
