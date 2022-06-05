@@ -6,11 +6,11 @@ html, body {
     align-items: center;
     height: 100vh;
     background-color: #1C1C1C;
+    font-family: 'Inter';
+    font-style: normal;
 }
 
 h1 {
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 800;
     font-size: 40px;
     line-height: 40px;
@@ -19,12 +19,15 @@ h1 {
 }
 
 h3 {
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
     margin: 9px 0px 0px 0px;
+}
+
+button {
+    font-family: 'Inter';
+    font-style: normal;
 }
 
 .card {
@@ -58,8 +61,6 @@ h3 {
     background: #FFFFFF;
     border: 2px solid #D5D4D8;
     border-radius: 7px;
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
@@ -71,18 +72,16 @@ h3 {
     grid-template-columns: auto auto;
 }
 
-.dual-column span:nth-child(even) {
+.dual-column > span:nth-child(even) {
     justify-self: end;
 }
 
-.dual-column div:nth-child(even) {
+.dual-column > div:nth-child(even) {
     justify-self: end;
 }
 
 #services-header {
     margin-top: 43px;
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 700;
     font-size: 12px;
     line-height: 20px;
@@ -90,8 +89,6 @@ h3 {
 }
 
 #requested-services {
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 20px;
@@ -101,16 +98,13 @@ h3 {
     row-gap: 23px;
 }
 
-#requested-services div:nth-child(even) span:nth-child(even) {
+#requested-services div:nth-child(even) span {
     font-weight: 500;
     font-size: 24px;
     line-height: 20px;
 }
 
 #requested-services div:nth-child(even) span:nth-child(odd) {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 20px;
     color: #918E9B;
 }
 
@@ -120,8 +114,6 @@ h3 {
 }
 
 #payment-header {
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 12px;
     line-height: 32px;
@@ -136,8 +128,6 @@ h3 {
 }
 
 #payment-methods {
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
@@ -145,8 +135,6 @@ h3 {
 }
 
 #payment-total {
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 36px;
     line-height: 32px;
@@ -157,8 +145,6 @@ h3 {
     width: 100%;
     margin-top: 50px;
     margin-bottom: 53px;
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
