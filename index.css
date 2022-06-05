@@ -8,6 +8,25 @@ html, body {
     background-color: #1C1C1C;
 }
 
+h1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    margin: 0px;
+}
+
+h3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    margin: 9px 0px 0px 0px;
+}
+
 .card {
     width: 550px;
     height: 719px;
@@ -16,9 +35,10 @@ html, body {
 
 .header {
     background-color: #F5F5F5;
+    color: #2B283A;
     text-align: center;
     padding-top: 59px;
-    padding-bottom: 51px;
+    padding-bottom: 52px;
 }
 
 .container {
@@ -30,10 +50,20 @@ html, body {
     display: flex;
     justify-content: center;
     gap: 22.27px;
+    margin-top: 36.5px;
 }
 
 #btn-container > button {
-    padding: 9px 13px;
+    padding: 14.5px 17px;
+    background: #FFFFFF;
+    border: 2px solid #D5D4D8;
+    border-radius: 7px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #4A4E74;
 }
 
 .dual-column {
@@ -45,9 +75,59 @@ html, body {
     justify-self: end;
 }
 
+.dual-column div:nth-child(even) {
+    justify-self: end;
+}
+
+#services-header {
+    margin-top: 43px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    color: #918E9B;
+}
+
+#requested-services {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    color: #4A4E74;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    row-gap: 23px;
+}
+
+#requested-services div:nth-child(even) span:nth-child(even) {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 20px;
+}
+
+#requested-services div:nth-child(even) span:nth-child(odd) {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 20px;
+    color: #918E9B;
+}
+
 #horizontal-line {
     height: 0px;
     border: 1px solid #C3C6DB;
+}
+
+#payment-header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 32px;
+    color: #918E9B;
+    margin-top: 11px;
+    margin-bottom: 11px;
 }
 
 #payment {
@@ -55,6 +135,41 @@ html, body {
     grid-template-columns: auto auto;
 }
 
+#payment-methods {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #4A4E74;
+}
+
+#payment-total {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 32px;
+    color: #4A4E74;
+}
+
 #reset-button {
     width: 100%;
+    margin-top: 50px;
+    margin-bottom: 53px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #3770ED;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: 7px;
+    padding: 9px 17px 9px 15px;
+}
+
+#reset-button i{
+    margin-right: 12px;
 }
